@@ -14,7 +14,7 @@ class NoteApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Poppins'
+        //fontFamily: 'Poppins'
       ),
       //theme: ThemeData.light(),
       home: Scaffold(
