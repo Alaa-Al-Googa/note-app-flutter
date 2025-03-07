@@ -17,11 +17,13 @@ class AddNoteButtomSheet extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
-              return ModalProgressHUD(
-                inAsyncCall: state is
-                AddNoteLoadingState ? true : false,
-                child: const SingleChildScrollView(
-                  child: AddNoteForm(),
+              return AbsorbPointer(
+                absorbing: state is AddNoteLoadingState ? true : false,
+                child:const Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: 16),
+                  child:  SingleChildScrollView(
+                    child: AddNoteForm(),
+                  ),
                 ),
               );
             },
