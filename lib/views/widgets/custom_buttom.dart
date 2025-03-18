@@ -6,6 +6,7 @@ class CustomButtom extends StatelessWidget {
 
   final void Function()? onTap;
   final bool isLoading;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
