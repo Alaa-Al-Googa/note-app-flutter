@@ -21,7 +21,9 @@ class CustomNoteItem extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.only(top: 24,bottom: 24,left: 16),
         decoration: BoxDecoration(
-          color: Color(note.color),
+          color: Color(
+              note.color
+          ),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -41,7 +43,8 @@ class CustomNoteItem extends StatelessWidget {
                     bottom: 16,
                   ),
                 child: Text(
-                  note.subTitle,
+                  // note.subTitle,
+                  'ffsfsfsf',
                   style: TextStyle(
                     color: Colors.black.withOpacity(.5),
                     fontSize: 18
@@ -59,7 +62,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(right: 24,),
               child: Text(
-                note.date,
+                 note.date,
                 style: TextStyle(
                   color: Colors.black.withOpacity(.4),
                   fontSize: 16,
