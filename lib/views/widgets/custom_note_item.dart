@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:note/cubits/get_note_cubit/notes_cubit.dart';
 import 'package:note/models/note_model.dart';
 import 'package:note/views/edit_note_view.dart';
 
@@ -45,8 +47,7 @@ class CustomNoteItem extends StatelessWidget {
                       bottom: 16,
                     ),
                   child: Text(
-                    // note.subTitle,
-                    'ffsfsfsf',
+                     note.subTitle,
                     style: TextStyle(
                       color: Colors.black.withOpacity(.5),
                       fontSize: 18
@@ -54,7 +55,10 @@ class CustomNoteItem extends StatelessWidget {
                   ),
                 ),
                 trailing: IconButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      note.delete();
+                      BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                    },
                     icon:Icon(FontAwesomeIcons.trash,
                       color: Colors.black,
                       size: 24,
@@ -63,7 +67,7 @@ class CustomNoteItem extends StatelessWidget {
               ),
               Padding(
                   padding: EdgeInsets.only(right: 24,),
-                child: Text(
+                  child: Text(
                    note.date,
                   style: TextStyle(
                     color: Colors.black.withOpacity(.4),
